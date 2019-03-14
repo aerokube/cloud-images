@@ -1,0 +1,13 @@
+---
+  - name: download CM
+    shell: wget -O /usr/bin/cm "https://github.com/aerokube/cm/releases/download/{{ cm_version }}/cm_linux_amd64"
+
+  - name: chmod CM
+    shell: chmod +x /usr/bin/cm
+
+  - name: install Selenoid
+    shell: /usr/bin/cm selenoid start --vnc --version {{ selenoid_version }}
+
+  - name: install Selenoid UI
+    shell: /usr/bin/cm selenoid-ui start --version {{ selenoid-ui_version }}
+

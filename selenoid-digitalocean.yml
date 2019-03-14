@@ -1,0 +1,6 @@
+- name: Prepare DigitalOcean host with Selenoid, Selenoid UI and two last versions of Firefox, Chrome, Opera (assumes that Docker is already installed)
+  hosts: all
+
+  roles:
+    - selenoid
+	- digitalocean

@@ -1,0 +1,25 @@
+#!/bin/sh
+
+ip=$(hostname -I | awk '{print$1}')
+cat <<EOF
+********************************************************************************
+
+Welcome to Aerokube Selenoid!
+
+Selenoid is a lightning fast Selenium protocol implementation running browsers
+inside Docker containers. This machine already contains everything to run your
+tests against two last versions of Firefox, Chrome and Opera Blink. To start
+testing - use the following URL in your code:
+
+http://$ip:4444/wd/hub
+
+To open user interface - copy the following URL to your browser:
+
+http://$ip:8080/
+
+To update available browser versions use the following command:
+
+$ cm selenoid update
+
+********************************************************************************
+EOF

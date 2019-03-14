@@ -1,0 +1,25 @@
+---
+  - name: copy motd
+    copy: src=etc/update-motd.d/99-aerokube dest=/etc/update-motd.d/99-aerokube owner=root group=root mode=0755
+
+  - name: copy img_cleanup.sh
+    copy: src=img_cleanup.sh dest=/usr/bin/img_cleanup.sh owner=root group=root mode=0755
+
+  - name: run img_cleanup.sh
+    shell: /usr/bin/img_cleanup.sh
+
+  - name: rm img_cleanup.sh
+    shell: rm /usr/bin/img_cleanup.sh
+
+  - name: download img_check.sh script
+    shell: wget -O /usr/bin/img_check.sh https://github.com/digitalocean/marketplace-partners/raw/master/marketplace_validation/img_check.sh 
+
+  - name: chmod img_check.sh
+    shell: chmod +x /usr/bin/img_check.sh 
+
+  - name: execute img_check.sh
+    shell: /usr/bin/img_check.sh 
+
+  - name: rm img_check.sh
+    shell: rm /usr/bin/img_check.sh 
+
