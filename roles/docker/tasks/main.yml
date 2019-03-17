@@ -1,0 +1,14 @@
+---
+  - name: apt-https support
+    raw: apt-get update && apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+
+  - name: Docker APT certificate
+    raw: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+  - name: Docker APT config
+    raw: add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+  - name: install Docker
+    raw: apt-get update && apt-get -y install docker-ce docker-ce-cli containerd.io
+
+
