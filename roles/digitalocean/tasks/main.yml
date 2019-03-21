@@ -1,6 +1,9 @@
 ---
   - name: rm old motd
-    raw: rm -rf /etc/update-motd.d/99-one-click
+    raw: rm -rf /etc/update-motd.d/*
+
+  - name: rm landscape-common
+    raw: apt-get -y purge landscape-common
 
   - name: copy motd
     local_action: command scp roles/digitalocean/files/etc/update-motd.d/99-aerokube root@{{inventory_hostname}}:/etc/update-motd.d/99-aerokube

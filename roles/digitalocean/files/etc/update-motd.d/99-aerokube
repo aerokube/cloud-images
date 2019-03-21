@@ -2,7 +2,6 @@
 
 ip=$(hostname -I | awk '{print$1}')
 cat <<EOF
-********************************************************************************
 
 Welcome to Aerokube Selenoid!
 
@@ -21,11 +20,16 @@ To update available browser versions use the following command:
 
 $ cm selenoid update
 
+To add mode parallel sessions type:
+
+$ cm selenoid update --args "-limit 10"
+
 Complete Selenoid documentation: https://aerokube.com/selenoid/latest
 
 Support email: support@aerokube.com
 
-Telegram support channel: https://t.me/aerokube 
+Telegram support channel: https://t.me/aerokube
 
-********************************************************************************
+Youtube channel with demo videos: https://www.youtube.com/channel/UC9HvE3FNfTvftzpvXi9c69g  
+
 EOF

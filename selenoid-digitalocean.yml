@@ -2,6 +2,6 @@
   hosts: all
   gather_facts: no
   roles:
-#    - docker
-#    - selenoid
+    - docker
+    - selenoid
     - digitalocean
