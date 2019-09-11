@@ -1,4 +1,4 @@
 ---
-cm_version: "1.5.7"
-selenoid_version: "1.9.1"
-selenoid_ui_version: "1.6.5"
+cm_version: "1.7.0"
+selenoid_version: "1.9.2"
+selenoid_ui_version: "1.8.1"
