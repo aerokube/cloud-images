@@ -8,5 +8,5 @@ Usage:
 
 2. Launch playbook:
 ```
-$ ansible-playbook -i hosts selenoid-digitalocean.yml
+$ ansible-playbook -i hosts selenoid.yml
 ```

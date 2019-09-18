@@ -1,7 +1,0 @@
-- name: Prepare DigitalOcean host with Docker, Selenoid, Selenoid UI and two last versions of Firefox, Chrome, Opera
-  hosts: all
-  gather_facts: no
-  roles:
-    - docker
-    - selenoid
-    - digitalocean

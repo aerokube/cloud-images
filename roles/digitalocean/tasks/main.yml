@@ -6,14 +6,22 @@
     raw: apt-get -y purge landscape-common
 
   - name: copy motd
-    local_action: command scp roles/digitalocean/files/etc/update-motd.d/99-aerokube root@{{inventory_hostname}}:/etc/update-motd.d/99-aerokube
+    local_action: command scp roles/digitalocean/files/etc/update-motd.d/99-aerokube {{ansible_user}}@{{inventory_hostname}}:./99-aerokube
+    become: false
+
+  - name: move motd
+    raw: mv ./99-aerokube /etc/update-motd.d/99-aerokube
 
   - name: copy img_cleanup.sh
-    local_action: command scp roles/digitalocean/files/img_cleanup.sh root@{{inventory_hostname}}:/usr/bin/img_cleanup.sh
+    local_action: command scp roles/digitalocean/files/img_cleanup.sh {{ansible_user}}@{{inventory_hostname}}:./img_cleanup.sh
+    become: false
+
+  - name: move img_cleanup.sh
+    raw: mv ./img_cleanup.sh /usr/bin/img_cleanup.sh
 
   - name: run img_cleanup.sh
     raw: DEBIAN_FRONTEND=noninteractive /usr/bin/img_cleanup.sh
-    
+
   - name: rm scripts
-    raw: rm /usr/bin/img_cleanup.sh 
+    raw: rm /usr/bin/img_cleanup.sh
 
