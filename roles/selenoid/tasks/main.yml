@@ -11,4 +11,13 @@
   - name: install Selenoid UI
     raw: /usr/bin/cm selenoid-ui start --version {{ selenoid_ui_version }}
 
+  - name: prepare licenses
+    local_action: command roles/selenoid/files/prepare_licenses.sh {{ licenses_dir }}
+    become: false
 
+  - name: copy licenses
+    local_action: command scp -r {{ licenses_dir }}/licenses {{ansible_user}}@{{inventory_hostname}}:./licenses
+    become: false
+
+  - name: move licenses
+    raw: mv ./licenses /usr/share/doc/licenses

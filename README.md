@@ -10,3 +10,7 @@ Usage:
 ```
 $ ansible-playbook -i hosts selenoid.yml
 ```
+For Google Cloud add username and `--become`:
+```
+$ ansible-playbook -i hosts selenoid.yml -u vania-pooh --become
+```
