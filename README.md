@@ -14,3 +14,12 @@ For Google Cloud add username and `--become`:
 ```
 $ ansible-playbook -i hosts selenoid.yml -u vania-pooh --become
 ```
+
+## Additional Actions for Google Cloud
+
+1. Need to create an image from stopped VM (not a snapshot!).
+2. Add `Compute Image User` role for `allAuthenticatedUsers`.
+3. Assign license to image:
+```
+$ gcloud compute images create <new-image-name> --project=<project-id> --source-image=<original-image> --source-image-project=<project-id> --licenses projects/<project-id>/global/licenses/<license-name> --description "Selenoid 1.9.2 image"
+```

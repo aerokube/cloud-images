@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get -y update
-apt-get -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 rm -rf /tmp/* /var/tmp/*
 history -c
 cat /dev/null > /root/.bash_history
