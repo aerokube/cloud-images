@@ -1,5 +1,5 @@
 ---
 cm_version: "1.7.1"
-selenoid_version: "1.9.2"
-selenoid_ui_version: "1.9.0"
+selenoid_version: "1.10.0"
+selenoid_ui_version: "1.10.0"
 licenses_dir: "roles/selenoid/tmp"
