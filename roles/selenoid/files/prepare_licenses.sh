@@ -4,9 +4,9 @@ set -e
 
 dir=$1
 
+mkdir -p ${dir}
 gp=$(realpath ${dir}/go)
 lc=$(realpath ${dir}/licenses)
-mkdir -p ${dir}
 GOPATH=${gp} go clean --modcache
 rm -Rf ${dir}/selenoid
 git clone https://github.com/aerokube/selenoid.git ${dir}/selenoid

@@ -10,9 +10,9 @@ Usage:
 ```
 $ ansible-playbook -i hosts selenoid.yml
 ```
-For Google Cloud add username and `--become`:
+For Google Cloud add change username in hosts file and add `--become`:
 ```
-$ ansible-playbook -i hosts selenoid.yml -u vania-pooh --become
+$ ansible-playbook -i hosts selenoid.yml --become
 ```
 
 ## Additional Actions for Google Cloud
