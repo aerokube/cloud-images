@@ -27,3 +27,10 @@ $ gcloud compute images create <image-name> --source-disk <vm-disk-name> --sourc
 $ gcloud compute images create <new-image-name> --project=<project-id> --source-image=<original-image> --source-image-project=<project-id> --licenses projects/<project-id>/global/licenses/<license-name> --description "Selenoid 1.9.2 image"
 ```
 Here `<license-name>` is from Partner Portal section (usually `selenoid`), `<project-id>` is `aerokube-software-public`.
+
+## Additional Action for Yandex Cloud
+
+1. Need to create an image from VM disk snapshot with [CLI](https://cloud.yandex.ru/docs/cli/quickstart):
+```
+$ yc compute image create <image-name> --source-snapshot-name <snapshot-name>
+```
