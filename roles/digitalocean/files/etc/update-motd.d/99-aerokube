@@ -1,6 +1,9 @@
 #!/bin/sh
 
-ip=$(hostname -I | awk '{print$1}')
+ip=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4)
+if [ -z ${ip} ]; then
+    ip=$(hostname -I | awk '{print$1}')
+fi
 cat <<EOF
 
 Welcome to Aerokube Selenoid!
@@ -30,6 +33,6 @@ Support email: support@aerokube.com
 
 Telegram support channel: https://t.me/aerokube
 
-Youtube channel with demo videos: https://www.youtube.com/channel/UC9HvE3FNfTvftzpvXi9c69g  
+Youtube channel with demo videos: https://www.youtube.com/channel/UC9HvE3FNfTvftzpvXi9c69g
 
 EOF
